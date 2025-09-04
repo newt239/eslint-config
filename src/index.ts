@@ -22,11 +22,13 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
 
     js.configs.recommended,
 
-    importPlugin.flatConfigs.recommended,
-
     {
       files: ["**/*.{ts,tsx,js,jsx}"],
+      plugins: {
+        import: importPlugin,
+      },
       rules: {
+        ...importPlugin.configs.recommended.rules,
         "no-console": ["error", { allow: ["warn", "error"] }],
         "max-params": ["error", { max: 3 }],
         "func-style": "error",
