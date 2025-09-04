@@ -70,7 +70,6 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
         parserOptions: {
           projectService: true,
           tsconfigRootDir: process.cwd(),
-          project: ["./tsconfig.json"],
         },
       },
       plugins: {
