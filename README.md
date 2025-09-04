@@ -11,7 +11,8 @@ newt239's ESLint config.
 npm install -D newt-eslint-config
 ```
 
-```ts
+```js
+// eslint.config.js
 import createConfig from "newt-eslint-config";
 
 export default createConfig();
@@ -19,7 +20,8 @@ export default createConfig();
 
 If you want to add other rules, you can add them to the config.
 
-```ts
+```js
+// eslint.config.js
 import createConfig from "newt-eslint-config";
 
 const baseConfigs = createConfig();
@@ -43,7 +45,8 @@ You must install `@next/eslint-plugin-next` as a dev dependency.
 npm install -D @next/eslint-plugin-next
 ```
 
-```ts
+```js
+// eslint.config.js
 import createConfig from "newt-eslint-config";
 
 export default createConfig({ next: true });
@@ -63,7 +66,7 @@ Limit the number of parameters of a function to 3.
 
 Enforce arrow functions for function expressions.
 
-### [import/order](https://eslint.org/docs/latest/rules/import/order)
+### [import/order](https://www.npmjs.com/package/eslint-plugin-import)
 
 Enforce consistent import order.
 
@@ -79,7 +82,7 @@ Limit the use of restricted syntax.
 
 Disallow the use of `any` type.
 
-### [no-unsafe-type-assertion](https://eslint.org/docs/latest/rules/no-unsafe-type-assertion)
+### [no-unsafe-type-assertion](https://typescript-eslint.io/rules/no-unsafe-type-assertion/)
 
 Disallow the use of unsafe type assertions.
 
@@ -87,7 +90,7 @@ Disallow the use of unsafe type assertions.
 
 Disallow the use of unused variables.
 
-### [strict-boolean-expressions](https://eslint.org/docs/latest/rules/strict-boolean-expressions)
+### [strict-boolean-expressions](https://typescript-eslint.io/rules/strict-boolean-expressions/)
 
 Disallow the use of strict boolean expressions.
 
@@ -98,10 +101,6 @@ Disallow the use of inconsistent type imports.
 ### [switch-exhaustiveness-check](https://eslint.org/docs/latest/rules/switch-exhaustiveness-check)
 
 Disallow the use of switch exhaustiveness check.
-
-### [prefer-arrow-functions](https://eslint.org/docs/latest/rules/prefer-arrow-functions)
-
-Enforce arrow functions for function expressions.
 
 ### [prefer-arrow-functions](https://eslint.org/docs/latest/rules/prefer-arrow-functions)
 
