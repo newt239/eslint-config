@@ -46,7 +46,15 @@ const createConfig = ({
         ...importPlugin.configs.recommended.rules,
         "no-console": ["error", { allow: ["warn", "error"] }],
         "max-params": ["error", { max: 3 }],
-        "func-style": "error",
+        "prefer-arrow-functions/prefer-arrow-functions": [
+          "error",
+          {
+            classPropertiesAllowed: false,
+            disallowPrototype: false,
+            returnStyle: "explicit",
+            singleReturnOnly: false,
+          },
+        ],
         "import/order": [
           "error",
           {
