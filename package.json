@@ -5,14 +5,7 @@
   },
   "repository": "newt239/eslint-config",
   "version": "0.1.0",
-  "main": "index.js",
-  "files": [
-    "lib",
-    "globals",
-    "presets",
-    "flat",
-    "index.js"
-  ],
+  "main": "index.mjs",
   "scripts": {
     "build": "tsdown src/index.ts --format esm --dts"
   },
