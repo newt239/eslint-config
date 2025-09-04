@@ -5,7 +5,14 @@
   },
   "repository": "newt239/eslint-config",
   "version": "0.1.0",
-  "main": "index.mjs",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
+    }
+  },
   "scripts": {
     "build": "tsdown src/index.ts --format esm --dts"
   },
