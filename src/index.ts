@@ -13,15 +13,17 @@ export type Options = {
 const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
   const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
-  const ignoresBase = ["node_modules/**", "out/**", "build/**"];
-  const ignoresNext = [".next/**", "next-env.d.ts"];
-  const ignores = next ? [...ignoresBase, ...ignoresNext] : ignoresBase;
-
   const config = defineConfig([
-    { ignores },
-
+    {
+      ignores: [
+        "node_modules/**",
+        "out/**",
+        "build/**",
+        ".next/**",
+        "next-env.d.ts",
+      ],
+    },
     js.configs.recommended,
-
     {
       files: ["**/*.{ts,tsx,js,jsx}"],
       plugins: {
@@ -62,7 +64,6 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
         ],
       },
     },
-
     {
       files: ["**/*.{ts,tsx}"],
       languageOptions: {
