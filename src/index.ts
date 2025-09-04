@@ -4,7 +4,6 @@ import importPlugin from "eslint-plugin-import";
 import tseslint from "typescript-eslint";
 import { FlatCompat } from "@eslint/eslintrc";
 import type { Linter } from "eslint";
-import { defineConfig } from "eslint/config";
 
 export type Options = {
   next?: boolean;
@@ -13,7 +12,7 @@ export type Options = {
 const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
   const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
-  const config = defineConfig([
+  const config: Linter.Config[] = [
     {
       ignores: [
         "node_modules/**",
@@ -107,7 +106,7 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
         "@typescript-eslint/switch-exhaustiveness-check": "error",
       },
     },
-  ]);
+  ];
 
   if (next) {
     config.push(...compat.extends("next/core-web-vitals", "next/typescript"), {
