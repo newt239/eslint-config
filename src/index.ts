@@ -68,7 +68,7 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
       languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
-          projectService: true,
+          project: true,
           tsconfigRootDir: process.cwd(),
         },
       },
