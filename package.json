@@ -14,7 +14,8 @@
     }
   },
   "scripts": {
-    "build": "tsdown src/index.ts --format esm --dts"
+    "build": "tsdown src/index.ts --format esm --dts",
+    "prepublishOnly": "npm run build"
   },
   "author": "newt239",
   "license": "MIT",
