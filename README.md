@@ -1,5 +1,8 @@
 # newt-eslint-config
 
+[![NPM Version](https://img.shields.io/npm/v/newt-eslint-config)](https://www.npmjs.com/package/newt-eslint-config)
+![GitHub License](https://img.shields.io/github/license/newt239/eslint-config)
+
 newt239's ESLint config.
 
 ## Usage
@@ -40,8 +43,12 @@ You must install `@next/eslint-plugin-next` as a dev dependency.
 npm install -D @next/eslint-plugin-next
 ```
 
-```js
+```ts
 import createConfig from "newt-eslint-config";
 
 export default createConfig({ next: true });
 ```
+
+## Rule List
+
+###

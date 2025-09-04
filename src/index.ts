@@ -2,14 +2,25 @@ import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
 import tseslint from "typescript-eslint";
+import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions";
 import { FlatCompat } from "@eslint/eslintrc";
-import type { Linter } from "eslint";
+import { fixupPluginRules } from "@eslint/compat";
 
-export type Options = {
+import type { Linter, ESLint } from "eslint";
+
+export type NewtESLintConfigOptions = {
   next?: boolean;
 };
 
-const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
+/**
+ * Create a new ESLint config.
+ * @param options - The options for the ESLint config.
+ * @param options.next - Whether to use the Next.js config.
+ * @returns The ESLint config.
+ */
+const createConfig = ({
+  next = false,
+}: NewtESLintConfigOptions = {}): Linter.Config[] => {
   const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
   const config: Linter.Config[] = [
@@ -27,6 +38,9 @@ const createConfig = ({ next = false }: Options = {}): Linter.Config[] => {
       files: ["**/*.{ts,tsx,js,jsx}"],
       plugins: {
         import: importPlugin,
+        "prefer-arrow-functions": fixupPluginRules(
+          preferArrowFunctions as ESLint.Plugin
+        ),
       },
       rules: {
         ...importPlugin.configs.recommended.rules,
